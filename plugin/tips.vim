@@ -9,3 +9,6 @@ function DisplayTip()
     print "Tip: #{content}"
 EOF
 endfunction
+
+command NextTip :call DisplayTip()
+command Nt :call DisplayTip()
