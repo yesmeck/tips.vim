@@ -14,3 +14,6 @@ Show vim tips everytime when you enter vim.
 
     Save to .vim/plugin
 
+# Usage
+
+Just open your vim! Or use command ``:NextTips`` to view more tips.
