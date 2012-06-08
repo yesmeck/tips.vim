@@ -3,7 +3,11 @@ function DisplayTip()
     require 'net/http'
     require 'uri'
 
-    content = Net::HTTP.get(URI.parse('http://vim-tips.org/tips/random'));
+    begin
+      content = Net::HTTP.get(URI.parse('http://vim-tips.org/tips/random'));
+    rescue
+      print "Can not get tip."
+    end
     print "Tip: #{content}"
 EOF
 endfunction
