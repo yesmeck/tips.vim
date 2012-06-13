@@ -2,9 +2,6 @@ require 'net/http'
 require 'uri'
 
 def display_tip
-  require 'net/http'
-  require 'uri'
-
   uri = URI.parse('http://vim-tips.org/')
   http = Net::HTTP.new(uri.host, uri.port)
   http.read_timeout= 3
