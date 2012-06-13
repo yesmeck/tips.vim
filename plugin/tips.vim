@@ -1,15 +1,9 @@
-function DisplayTip()
-    ruby << EOF
-    require 'net/http'
-    require 'uri'
-
-    begin
-      content = Net::HTTP.get(URI.parse('http://vim-tips.org/tips/random'));
-    rescue
-      print "Can not get tip."
-    end
-    print "Did you know? #{content}"
+ruby << EOF
+    require File.join(File.dirname(__FILE__), '..', 'ruby/tips')
 EOF
+
+function DisplayTip()
+  ruby display_tip
 endfunction
 
 autocmd VimEnter * :call DisplayTip()
