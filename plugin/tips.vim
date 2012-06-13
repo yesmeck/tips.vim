@@ -8,7 +8,7 @@ function DisplayTip()
     rescue
       print "Can not get tip."
     end
-    print "Tip: #{content}"
+    print "Did you know? #{content}"
 EOF
 endfunction
 
