@@ -5,10 +5,15 @@ def display_tip
   require 'net/http'
   require 'uri'
 
-  begin
-    content = Net::HTTP.get(URI.parse('http://vim-tips.org/tips/random'));
-  rescue
-    print "Can not get tip."
+  uri = URI.parse('http://vim-tips.org/')
+  http = Net::HTTP.new(uri.host, uri.port)
+  http.read_timeout= 3
+  response = http.get('/tips/random')
+  case response
+  when Net::HTTPSuccess
+    print "Did you know? #{response.body}"
+  else
+    response.error!
   end
-  print "Tip: #{content}"
 end
+
