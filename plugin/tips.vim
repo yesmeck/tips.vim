@@ -15,11 +15,11 @@ ruby << EOF
   end
 EOF
 
-function DisplayTip()
+function! DisplayTip()
   ruby display_tip
 endfunction
 
-autocmd VimEnter * :call DisplayTip()
+autocmd! VimEnter * :call DisplayTip()
 
-command NextTip :call DisplayTip()
-command Nt :call DisplayTip()
+command! NextTip :call DisplayTip()
+command! Nt :call DisplayTip()
