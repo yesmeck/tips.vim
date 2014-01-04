@@ -1,4 +1,4 @@
-# Tips.vim
+# Tips.vim (DEPRECATED!)
 
 Show vim tips everytime when you enter vim.
 
